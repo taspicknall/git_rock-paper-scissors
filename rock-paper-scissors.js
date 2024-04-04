@@ -11,6 +11,7 @@ function getComputerChoice() {
         choice = "scissors";
         return "scissors";
     }   
+    // Assigns rock, paper or scissors to randomly generated number
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -39,10 +40,17 @@ function playRound(playerSelection, computerSelection) {
     }   
 }
 
-    const playerSelection = "RoCk";
+let playerInput = prompt("Type rock, paper or scissors to play game.").toLowerCase();
+ // Prompt window for playerInput, converts to lowercase.
+
+
+let playerSelection = playerInput;
+
 
     computerSelection = getComputerChoice();
     console.log(playRound(playerSelection, computerSelection)); 
     console.log(getComputerChoice());
     console.log(playerSelection);
     console.log(computerSelection);
+
+   
