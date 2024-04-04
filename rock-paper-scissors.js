@@ -39,18 +39,18 @@ function playRound(playerSelection, computerSelection) {
         return "tie";
     }   
 }
-
-let playerInput = prompt("Type rock, paper or scissors to play game.").toLowerCase();
+function playerInput() {
+    let playerSelection = prompt("Type rock, paper or scissors to play game.").toLowerCase();
+    return playerSelection;
  // Prompt window for playerInput, converts to lowercase.
-
-
-let playerSelection = playerInput;
-
+}
 
 let computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection)); 
-    console.log(getComputerChoice());
-    console.log(playerSelection);
+   
+    console.log(playRound(playerInput(), computerSelection)); 
+    console.log(playerInput());
     console.log(computerSelection);
 
-   
+function playGame() {
+    playRound()
+}   
