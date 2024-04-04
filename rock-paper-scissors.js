@@ -47,7 +47,7 @@ let playerInput = prompt("Type rock, paper or scissors to play game.").toLowerCa
 let playerSelection = playerInput;
 
 
-    computerSelection = getComputerChoice();
+let computerSelection = getComputerChoice();
     console.log(playRound(playerSelection, computerSelection)); 
     console.log(getComputerChoice());
     console.log(playerSelection);
