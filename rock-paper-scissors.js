@@ -27,13 +27,13 @@ function playRound(playerSelection, computerSelection) {
         return "Paper covers Rock, you win!";
     }
     else if (playerSelection === "rock" && computerSelection === "paper") {
-        return "Paper covers Rock, you lose";
+        return "Rock is covered by Paper, you lose";
     }
     else if (playerSelection === "scisssors" && computerSelection === "rock") {
-        return "Rock smashes Scissors, you lose.";
+        return "Scissors are smashed by Rock, you lose.";
     }
     else if (playerSelection === "paper" && computerSelection === "scissors") {
-        return "Scissors cuts Paper, you lose.";
+        return "Paper is cut by Scissors, you lose.";
     }
     else if (playerSelection === computerSelection) {
         return "tie";
