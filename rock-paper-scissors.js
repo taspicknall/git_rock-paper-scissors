@@ -1,6 +1,7 @@
 function getComputerChoice() {
-    let choice = Math.random();
     // Math.random() generates a function between 1 and 0.
+    let choice = Math.random();
+    // Assigns rock, paper or scissors to randomly generated number
     if (choice <= 0.333) {
         choice = "rock";
         return "rock";
@@ -11,12 +12,11 @@ function getComputerChoice() {
         choice = "scissors";
         return "scissors";
     }   
-    // Assigns rock, paper or scissors to randomly generated number
+    
 }
 
-function playRound(playerSelection, computerSelection) {
 // structure for outcomes processed in game.
-
+function playRound(playerSelection, computerSelection) {
     if (playerSelection === "rock" && computerSelection === "scissors") {
         return "Rock smashes Scissors, you win!";
     }
@@ -38,19 +38,37 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection === computerSelection) {
         return "tie";
     }   
+    else {
+        return "Can't score. You did not enter rock, paper or scissors.";
+    }
 }
+
+// Prompt window for playerInput, converts to lowercase.
 function playerInput() {
     let playerSelection = prompt("Type rock, paper or scissors to play game.").toLowerCase();
     return playerSelection;
- // Prompt window for playerInput, converts to lowercase.
 }
 
-let computerSelection = getComputerChoice();
-   
-    console.log(playRound(playerInput(), computerSelection)); 
-    console.log(playerInput());
-    console.log(computerSelection);
-
 function playGame() {
-    playRound()
-}   
+    // buckets for playRound results to be stored
+    let playerScore = 0;
+    let computerScore = 0;
+    let tie = 0;
+    
+    for (let i = 1; i <= 5; i++) {  
+        const computerSelection = getComputerChoice(); 
+        //declaring computerselection in loop made 5 different selections
+        console.log (playRound(playerInput(), computerSelection)) 
+        
+     }
+
+    
+    
+   
+    //return playRound(playerInput(), computerSelection); 
+}    
+    //console.log(playRound(playerInput(), computerSelection));
+
+playGame()
+
+
