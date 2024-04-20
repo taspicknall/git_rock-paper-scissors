@@ -17,31 +17,41 @@ function getComputerChoice() {
 
 // structure for outcomes processed in game.
 function playRound(playerSelection, computerSelection) {
+    // buckets for playRound results to be stored
+    let playerScore = 0;
+    let computerScore = 0;
+    let tie = 0;
     if (playerSelection === "rock" && computerSelection === "scissors") {
+        playerScore++;
         return "Rock smashes Scissors, you win!";
     }
     else if (playerSelection === "scissors" && computerSelection === "paper") {
+        playerScore ++;
         return "Scissors cuts Paper, you win!";
     }
     else if (playerSelection === "paper" && computerSelection === "rock") {
+        playerScore ++;
         return "Paper covers Rock, you win!";
     }
     else if (playerSelection === "rock" && computerSelection === "paper") {
+        computerScore ++;
         return "Rock is covered by Paper, you lose";
     }
     else if (playerSelection === "scisssors" && computerSelection === "rock") {
+        computerScore ++;
         return "Scissors are smashed by Rock, you lose.";
     }
     else if (playerSelection === "paper" && computerSelection === "scissors") {
+        computerScore ++;
         return "Paper is cut by Scissors, you lose.";
     }
     else if (playerSelection === computerSelection) {
+        tie ++;
         return "tie";
     }   
     else {
         return "Can't score. You did not enter rock, paper or scissors.";
     }
-
 }
 
 // Prompt window for playerInput, converts to lowercase.
@@ -51,41 +61,28 @@ function playerInput() {
 }
  
 function playGame() {
-    
     for (let i = 1; i <= 5; i++) {  
         const computerSelection = getComputerChoice(); 
         //declaring computerselection in loop made 5 different selections
         console.log (playRound(playerInput(), computerSelection)) 
      }
-//below here all needs to be re-worked. still trying to figure out scope and how to tally games
-     // buckets for playRound results to be stored
-    let playerScore = 0;
-    let computerScore = 0;
-    let tie = 0;
+    }
 
-    playerScore.addEventListener("you win", event => {
-        playerScore++})
-
-    computerScore.addEventListener("you lose", event => {
-        computerScore++})
-
-    function gameResults (playerScore, computerScore) {
-        if (playerScore > computerScore) {
-            return "You won more rounds than the computer. You win!!!";
-        }
-        else if (playerScore < computerScore) {
-            return "The Computer won more rounds. You lose.";
-        }
-        else if (playerScore == computerScore) {
-            return "You and for computer won an equal amount of games. It's a tie.";
-        }
+function gameResults(playerScore,computerScore) {
+    if(playerScore > computerScore) {
+        return "You won more rounds than the computer. You win!!!";
+    }
+    else if(playerScore < computerScore) {
+        return "The Computer woplayerScore, computerScoren more rounds. You lose.";
+    }
+    else if(playerScore == computerScore) {
+        return "You and for computer won an equal amount of games. It's a tie.";
     }   
-    console.log(gameResults) 
-}    
+}
 
 playGame()
+gameResults()
 
-// Add the score tallies into playRound(). Ex.: playerScore++. 
-//I think I might have a scope problem getting tallies into score buckets.
+
 
 
