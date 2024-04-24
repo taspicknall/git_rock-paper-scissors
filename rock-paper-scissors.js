@@ -21,6 +21,7 @@ function playRound(playerSelection, computerSelection) {
     let playerScore = 0;
     let computerScore = 0;
     let tie = 0;
+   
     if (playerSelection === "rock" && computerSelection === "scissors") {
         playerScore++;
         return "Rock smashes Scissors, you win!";
@@ -68,7 +69,9 @@ function playGame() {
      }
     }
 
-function gameResults(playerScore,computerScore) {
+function gameResults(playerScore,computerScore) { //need to find
+    // ***way to access playerScore and computerScore in local scope of
+    // playRound function***
     if(playerScore > computerScore) {
         return "You won more rounds than the computer. You win!!!";
     }
