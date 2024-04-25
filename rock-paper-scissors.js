@@ -16,34 +16,34 @@ function getComputerChoice() {
 }
 
  // buckets for playRound results to be stored
-let playerWins = 0;
-let computerWins = 0;
+let playerScore = 0;
+let computerScore = 0;
 let tie = 0;
 
 // structure for outcomes processed in game.
 function playRound(playerSelection, computerSelection) {     
     if (playerSelection === "rock" && computerSelection === "scissors") {
-        playerWins++;
+        playerScore++;
         return "Rock smashes Scissors, you win!";
     }
     else if (playerSelection === "scissors" && computerSelection === "paper") {
-        playerWins ++;
+        playerScore ++;
         return "Scissors cuts Paper, you win!";
     }
     else if (playerSelection === "paper" && computerSelection === "rock") {
-        playerWins ++;
+        playerScore ++;
         return "Paper covers Rock, you win!";
     }
     else if (playerSelection === "rock" && computerSelection === "paper") {
-        computerWins ++;
+        computerScore ++;
         return "Rock is covered by Paper, you lose";
     }
     else if (playerSelection === "scisssors" && computerSelection === "rock") {
-        computerWins ++;
+        computerScore ++;
         return "Scissors are smashed by Rock, you lose.";
     }
     else if (playerSelection === "paper" && computerSelection === "scissors") {
-        computerWins ++;
+        computerScore ++;
         return "Paper is cut by Scissors, you lose.";
     }
     else if (playerSelection === computerSelection) {
@@ -65,24 +65,27 @@ function playGame() {
     for (let i = 1; i <= 5; i++) {  
         const computerSelection = getComputerChoice(); 
         //declaring computerselection in loop made 5 different selections
-        console.log (playRound(playerInput(), computerSelection)) 
+        console.log (playRound(playerInput(), computerSelection));
      }
     }
+    
 playGame()
 
-function gameResults(playerWins,computerWins) { 
+function gameResults(playerWins, computerWins) { 
     if (playerWins > computerWins) {
         return "You won more rounds than the computer. You win!!!";
     }
     else if (playerWins < computerWins) {
-        return "The Computer won more rounds. You lose.";
+        return "The Computer won more rounds. You lose :-(";
     }
     else if (playerWins === computerWins) {
         return "You and for computer won an equal number of games. It's a tie.";
-    }  console.log(gameResults(playerScore, computerScore))
+    } 
 }
 
 gameResults()
+
+console.log(gameResults(playerScore, computerScore))
 
 
 
