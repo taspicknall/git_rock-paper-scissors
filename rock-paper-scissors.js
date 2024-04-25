@@ -79,7 +79,7 @@ function gameResults(playerWins, computerWins) {
         return "The Computer won more rounds. You lose :-(";
     }
     else if (playerWins === computerWins) {
-        return "You and for computer won an equal number of games. It's a tie.";
+        return "You and the computer won an equal number of games. It's a tie.";
     } 
 }
 
