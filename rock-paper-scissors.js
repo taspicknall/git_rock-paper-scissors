@@ -15,13 +15,13 @@ function getComputerChoice() {
     
 }
 
+ // buckets for playRound results to be stored
+let playerScore = 0;
+let computerScore = 0;
+let tie = 0;
+
 // structure for outcomes processed in game.
-function playRound(playerSelection, computerSelection) {
-    // buckets for playRound results to be stored
-    let playerScore = 0;
-    let computerScore = 0;
-    let tie = 0;
-   
+function playRound(playerSelection, computerSelection) {     
     if (playerSelection === "rock" && computerSelection === "scissors") {
         playerScore++;
         return "Rock smashes Scissors, you win!";
@@ -69,22 +69,23 @@ function playGame() {
      }
     }
 
-function gameResults(playerScore,computerScore) { //need to find
-    // ***way to access playerScore and computerScore in local scope of
-    // playRound function***
-    if(playerScore > computerScore) {
+function gameResults(playerScore,computerScore) { 
+    if (playerScore > computerScore) {
         return "You won more rounds than the computer. You win!!!";
     }
-    else if(playerScore < computerScore) {
+    else if (playerScore < computerScore) {
         return "The Computer woplayerScore, computerScoren more rounds. You lose.";
     }
-    else if(playerScore == computerScore) {
+    else if (playerScore == computerScore) {
         return "You and for computer won an equal amount of games. It's a tie.";
-    }   
+    }
+    console.log(gameResults(playerScore, computerScore))   
 }
 
 playGame()
 gameResults()
+
+
 
 
 
