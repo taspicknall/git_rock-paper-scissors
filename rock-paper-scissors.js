@@ -65,7 +65,8 @@ function getPlayerInput() {
 function playGame() {
     for (let i = 1; i <= 5; i++) {  
         const computerSelection = getComputerChoice(); 
-        //declaring computerselection in loop made 5 different selections
+        //declaring computerselection in loop made 5 different selections. When
+        // outside I got same random computerSelection 5 times.
         console.log (playRound(getPlayerInput(), computerSelection));
      }
     }
