@@ -55,8 +55,8 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// Prompt window for playerInput, converts to lowercase.
-function playerInput() {
+// Prompt window for getPlayerInput, converts to lowercase.
+function getPlayerInput() {
     let playerSelection = prompt("Type rock, paper or scissors to play game.").toLowerCase();
     return playerSelection;
 }
@@ -65,13 +65,13 @@ function playGame() {
     for (let i = 1; i <= 5; i++) {  
         const computerSelection = getComputerChoice(); 
         //declaring computerselection in loop made 5 different selections
-        console.log (playRound(playerInput(), computerSelection));
+        console.log (playRound(getPlayerInput(), computerSelection));
      }
     }
     
 playGame()
 
-function gameResults(playerWins, computerWins) { 
+function getGameResults(playerWins, computerWins) { 
     if (playerWins > computerWins) {
         return "You won more rounds than the computer. You win!!!";
     }
@@ -83,9 +83,9 @@ function gameResults(playerWins, computerWins) {
     } 
 }
 
-gameResults()
+getGameResults()
 
-console.log(gameResults(playerScore, computerScore))
+console.log(getGameResults(playerScore, computerScore))
 
 
 
