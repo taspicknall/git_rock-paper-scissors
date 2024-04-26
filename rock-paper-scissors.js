@@ -70,7 +70,7 @@ function playGame() {
      }
     }
     
-playGame()
+playGame();
 
 //function for winner/loser to be processed in and result returned
 function getGameResults(playerWins, computerWins) { 
@@ -85,9 +85,9 @@ function getGameResults(playerWins, computerWins) {
     } 
 }
 
-getGameResults()
+getGameResults();
 
-console.log(getGameResults(playerScore, computerScore))
+console.log(getGameResults(playerScore, computerScore));
 
 
 
