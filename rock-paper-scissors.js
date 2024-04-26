@@ -61,6 +61,7 @@ function getPlayerInput() {
     return playerSelection;
 }
  
+
 function playGame() {
     for (let i = 1; i <= 5; i++) {  
         const computerSelection = getComputerChoice(); 
@@ -71,6 +72,7 @@ function playGame() {
     
 playGame()
 
+//function for winner/loser to be processed in and result returned
 function getGameResults(playerWins, computerWins) { 
     if (playerWins > computerWins) {
         return "You won more rounds than the computer. You win!!!";
